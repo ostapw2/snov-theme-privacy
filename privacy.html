@@ -1,0 +1,211 @@
+<!doctype html>
+<!--
+  The PUBLISHED privacy policy page for the Chrome Web Store listing.
+  Source of truth for the wording is ../PRIVACY.md — keep the two in step.
+  Published to the public repo `snov-theme-privacy` (GitHub Pages, root of main),
+  because this repo is private and Pages on a private repo is not publicly readable.
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Snov Theme — Privacy Policy</title>
+    <meta
+      name="description"
+      content="Privacy policy for the Snov Theme Chrome extension: no accounts, no analytics, no tracking, no remote code; all settings stay in the user's browser."
+    />
+    <style>
+      :root {
+        color-scheme: light dark;
+        --bg: #ffffff;
+        --fg: #1b2029;
+        --muted: #5b6577;
+        --line: #e4e7ee;
+        --card: #f7f8fa;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #14171d;
+          --fg: #e7ebf2;
+          --muted: #9aa4b6;
+          --line: #262b34;
+          --card: #1b2029;
+        }
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--fg);
+        font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif;
+        -webkit-text-size-adjust: 100%;
+      }
+      main { max-width: 760px; margin: 0 auto; padding: 48px 20px 80px; }
+      h1 { font-size: 30px; line-height: 1.25; margin: 0 0 8px; }
+      h2 { font-size: 20px; margin: 40px 0 12px; }
+      p, li { margin: 0 0 12px; }
+      ul, ol { padding-left: 22px; }
+      ol > li { margin-bottom: 16px; }
+      a { color: inherit; }
+      code {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 4px;
+        padding: 1px 5px;
+        font-size: 0.9em;
+      }
+      .meta {
+        color: var(--muted);
+        font-size: 14px;
+        margin: 0 0 28px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid var(--line);
+      }
+      .meta div { margin: 2px 0; }
+      .lead {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 16px 18px;
+      }
+      .lead p:last-child { margin-bottom: 0; }
+      footer {
+        margin-top: 48px;
+        padding-top: 20px;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Snov Theme — Privacy Policy</h1>
+      <div class="meta">
+        <div><strong>Effective date:</strong> 18 August 2026</div>
+        <div><strong>Extension:</strong> Snov Theme (Chrome Web Store)</div>
+        <div><strong>Contact:</strong> <a href="mailto:o.shtai@snov.io">o.shtai@snov.io</a></div>
+      </div>
+
+      <div class="lead">
+        <p>
+          Snov Theme has no accounts, no analytics, no tracking, no advertising and
+          no remote code. It does not sell or share personal data with anyone.
+          Everything the extension remembers is kept in your own browser. The single
+          exception is the optional <strong>Team Comments</strong> feature, which —
+          only after you switch it on and paste in your own team endpoint — sends the
+          comments you write to that endpoint of yours. Details below.
+        </p>
+      </div>
+
+      <h2>What the extension stores, and where</h2>
+      <p>
+        All of the following is written to <code>chrome.storage.local</code> on your
+        own device and never leaves the browser:
+      </p>
+      <ul>
+        <li>the dark-theme on/off state and the individual page-feature switches;</li>
+        <li>
+          style edits made with the built-in visual editor (per-site overrides,
+          classes, design tokens, moved or duplicated elements, text edits, guides);
+        </li>
+        <li>images or icons you upload to replace one on a page;</li>
+        <li>
+          the campaign-flow screenshot the floating campaign card shows (captured
+          from your own visible tab and displayed back to you in the same tab);
+        </li>
+        <li>
+          the editor's undo history (<code>chrome.storage.session</code>, dropped
+          when Chrome closes).
+        </li>
+      </ul>
+      <p>
+        Uninstalling the extension deletes all of it. “Reset site” inside the
+        extension clears it for one site.
+      </p>
+
+      <h2>Where the extension is allowed to run</h2>
+      <p>
+        <code>https://app.snov.io/*</code> and <code>https://preprod.snov.io/*</code>
+        only. The extension has no access to any other website, and it reads nothing
+        from any other tab.
+      </p>
+
+      <h2>Network requests</h2>
+      <ol>
+        <li>
+          <strong>To Snov.io itself.</strong> Some page enhancements read data the
+          Snov.io page has already loaded from its own API (for example the current
+          search-results page, so that a row can show which list it belongs to).
+          These are ordinary same-site requests made with your existing Snov.io
+          session, exactly as the page's own code makes them. Nothing is sent to us
+          or to any third party, and no response is stored beyond the tab's own
+          memory.
+        </li>
+        <li>
+          <strong>To your team's own endpoint — only if you enable Team
+          Comments.</strong> This optional feature is off and unconfigured out of the
+          box: it does nothing until you paste in the URL of a Google Apps Script web
+          app that you or your team deploy and control. Once you do, the comments you
+          write are sent there so your teammates can read them. What is sent: the
+          comment text, the display name you type for yourself, a timestamp, the site
+          host and page path the comment is pinned to, and a CSS selector plus a
+          short text snippet identifying the element it points at. The destination is
+          your own Google Workspace deployment — the author of the extension operates
+          no server and receives none of it. Clearing the endpoint in the extension's
+          settings stops all of it.
+        </li>
+      </ol>
+      <p>
+        There are no other network requests. No analytics endpoint, no error
+        reporting, no update pings of our own.
+      </p>
+
+      <h2>What the extension never does</h2>
+      <ul>
+        <li>
+          It does not collect or transmit personally identifiable information,
+          authentication information, financial information, health information,
+          personal communications, location, browsing history or user activity.
+        </li>
+        <li>
+          It does not read or exfiltrate the contents of Snov.io pages, your prospect
+          data, your emails or your credentials.
+        </li>
+        <li>
+          It does not sell or transfer any data to third parties, and it does not use
+          any data for advertising, credit assessment or lending.
+        </li>
+        <li>
+          It does not use any data for any purpose unrelated to restyling and
+          enhancing Snov.io pages.
+        </li>
+        <li>
+          It loads no remote code: every line it runs ships inside the published
+          package.
+        </li>
+      </ul>
+
+      <h2>Children</h2>
+      <p>
+        The extension is a workplace tool for Snov.io users and is not directed at
+        children.
+      </p>
+
+      <h2>Changes</h2>
+      <p>
+        If this policy changes, the new version is published at this same URL with a
+        new effective date.
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        Questions or removal requests:
+        <a href="mailto:o.shtai@snov.io">o.shtai@snov.io</a>
+      </p>
+
+      <footer>Snov Theme — Chrome extension. Last updated 18 August 2026.</footer>
+    </main>
+  </body>
+</html>
